@@ -136,14 +136,14 @@ def normalizacion_A(matriz):
 	Returns:
 		U
 	"""
+	n = matriz.shape[1]
+	m = matriz.shape[0]
+	U = np.zeros((m,n))
 
-    n = matriz.shape[1]
-    m = matriz.shape[0]
-    U = np.zeros((m,n))
-
-    for i in range(n):
-        u = matriz[:,i]/np.linalg.norm(matriz[:,i])
-        U[:,i] = u
+	for i in range(n):
+	    u = matriz[:,i]/np.linalg.norm(matriz[:,i])
+	    U[:,i] = u
         
-    indexlist = np.argsort(np.linalg.norm(matriz,axis=0))[::-1]
-    return U[:,indexlist]
+	indexlist = np.argsort(np.linalg.norm(matriz,axis=0))[::-1]
+	
+	return U[:,indexlist]
