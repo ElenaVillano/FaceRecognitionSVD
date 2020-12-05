@@ -1,0 +1,135 @@
+---
+title: "Eigen Faces"
+subtitle: "aplicando los métodos de PCA, SVDy rotaciones de Jacobi"
+author:
+  - Elena Villalobos Nolasco
+  - Nancy Dira Martínez Guzmán
+  - Laura Marcela Tejada López
+  - Santiago Battezati
+institute: "ITAM"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+layout: true
+background-position: 98% 5% 
+background-size: 12%
+<div style="text-align: justify">  
+---
+
+```{r logo, echo=F}
+library(xaringanExtra)
+
+xaringanExtra::use_logo(
+  image_url = "http://escolar.itam.mx/centro_tesis/img/logo-ITAM.png",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+
+# Introducción
+
+
+---
+
+# Sobre los Métodos que Veremos
+
+
+---
+
+class: inverse, center, middle
+
+# Análisis de Componentes Principales
+
+---
+
+# Planteamiento del Problema
+
+
+---
+
+# El Problema de Optimización
+
+ 
+---
+
+# Implementación
+
+
+---
+
+# Ventajas y Desventajas de PCA
+
+
+
+---
+class: inverse, center, middle
+
+# EigenFaces
+Aplicando SVD
+
+---
+
+# Descripción del Algoritmo
+
+
+---
+
+# Implementación del Algoritmo
+
+
+
+---
+class: inverse, center, middle
+
+# EigenFaces
+Aplicando Rotaciones de Jacobi
+
+---
+
+# Descripción del Algoritmo
+
+
+
+
+---
+
+# Implementación del Algoritmo
+
+
+---
+class: inverse, center, middle
+
+# Conclusiones
+Aplicaciones y una Nota sobre Tensores
+
+---
+
+# Conclusiones y Aplicaciones
+
+
+
+---
+
+# Nota Sobre los Valores Faltantes
+
+
+
+---
+
+# Nota sobre Tensores
+
+
+---
+
+layout: false
+class: inverse, center, middle
+
+# Dudas
+
+
+
