@@ -9,6 +9,12 @@
 |Algoritmo eigenfaces, resolución de preguntas en exposición|Dira|@diramtz|
 |Integración algoritmo jacobi, AWS, preguntas sobre otras exposiciones|Elena|@ElenaVillano|
 
+#### Notas:
+
+- El reporte final del proyecto se encuentra en el documento Reporte_final_eigenfaces_OK.ipynb.
+- El reporte sobre implementación en AWS se encuentra en docs/[ImplementationAWS.pdf](https://github.com/ElenaVillano/FaceRecognitionSVD/blob/version_con_documentos_completos/docs/ImplementationAWS.pdf)
+- La presentación del proyecto se colocará en docs/[slide_deck_eigenfaces.Rmd] todavía en construcción...
+
 ## Referencias
 
 - Divyakant Meva, CK Kumbharana, “Study of different trends and techniques in face recognition”, International Journal of Computer Applications, Volume 96– No.8, June 2014, pp. 1-4
