@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Eigen Faces</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Elena Villalobos Nolasco" />
+    <meta name="author" content="Nancy Dira Martínez Guzmán" />
+    <meta name="author" content="Laura Marcela Tejada López" />
+    <meta name="author" content="Santiago Battezati" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Eigen Faces
+## aplicando los métodos de PCA, SVD y rotaciones de Jacobi
+### Elena Villalobos Nolasco
+### Nancy Dira Martínez Guzmán
+### Laura Marcela Tejada López
+### Santiago Battezati
+### ITAM
+
+---
+
+layout: true
+background-position: 98% 5% 
+background-size: 12%
+&lt;div style="text-align: justify"&gt;  
+---
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(http://escolar.itam.mx/centro_tesis/img/logo-ITAM.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+# Índice
+
+###1. Introducción
+
+###2. PCA
+
+###3. EigenFaces
+  - Algoritmo con SVD
+  - Algoritmo con Rotaciones de Jacobi
+  
+###4. Conclusiones
+
+---
+
+# Introducción
+
+Dos tendencias principales en los algoritmos para reconocer rostros:
+
+- Algoritmos basados en la apariencia (holísticos)
+- Algoritmos basados en rasgos (features)
+
+**Los algoritmos de clasificación más utilizados para resolver el problema del reconocimiento de rostro han sido PCA y LDA.**
+
+Eigenfaces y Fisherfaces son ejemplos de estos. También se han utilizado métodos bayesianos, entre otros.
+
+
+&lt;img src="img_1.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse, center, middle
+
+# Análisis de Componentes Principales
+
+---
+
+# Planteamiento del Problema
+
+El **Análisis de Componentes Principales** (PCA) se utiliza usualmente como una técnica de visualización, reducción de dimensión y también como un paso intermedio en el análisis de datos como técnica explicatoria. Es por ello que **este método es uno de los usos principales de la SVD**.
+
+Representa la selección de un nuevo conjunto de coordenadas, que obtenemos mediante rotación y traslación del sistema original a ejes, en donde se maximiza la varianza en cada dirección.
+
+&lt;img src="img_2.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### El Problema de Optimización
+
+&lt;img src="img_3.png" width="130%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación
+
+**Pasos**
+
+1. Estandarización de variables
+2. Selección del número de componentes principales según el porcentaje de varianza explicada
+3. Utilizar el algoritmo de PCA, que podemos consultar en la documentación de sklearn
+4. Interpretar las componentes principales
+
+
+
+
+**Elección de las Componentes Principales**
+
+- QCP que acumulen cierto porcentaje de la variación total.
+- CP cuyos eigenvalores sean mayores que el promedio  𝜆¯ .
+- Utilizar una gráfica de codo (scree plot).
+- Verificar la significancia de las componentes más grandes.
+
+---
+
+# Ventajas y Desventajas de PCA
+
+**Ventajas**
+- Reducción de variables correlacionadas entre sí.
+- Mejora el desempeño del algoritmo.
+- Reduce el sobreajuste.
+- Puede proveer una mejor visualización.
+
+
+**Desventajas**
+- Las componentes principales pueden ser sensibles a outliers.
+- Las componentes principales son sensibles a distintos escalamientos de los datos originales.
+- Difícil interpretación de las componentes principales y de las visualizaciones.
+- Puede haber una pérdida significativa de información.
+
+---
+class: inverse, center, middle
+
+# EigenFaces
+Aplicando SVD
+
+---
+
+# Descripción del Algoritmo
+
+&lt;img src="img_4.png" width="120%" style="display: block; margin: auto;" /&gt;
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_5.png" width="60%" style="display: block; margin: auto;" /&gt;
+---
+
+# Implementación del Algoritmo
+&lt;img src="img_6.png" width="60%" style="display: block; margin: auto;" /&gt;
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_7.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_8.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="img_9.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_10.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_11.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_12.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_13.png" width="70%" style="display: block; margin: auto;" /&gt;
+---
+class: inverse, center, middle
+
+# EigenFaces
+Aplicando Rotaciones de Jacobi
+
+---
+
+# Descripción del Algoritmo
+
+El **método de rotaciones Jacobi one sided, es un método numérico para calcular SVD**. El método utiliza las rotaciones de Jacobi, una transformación de rotación, para construir a la matriz ortogonal V y llegar a W.
+
+En este apartado, hacemos uso de este método, que construimos en una práctica anterior, como una forma de llegar a la descomposición SVD e implementar el algoritmo Eigenfaces.
+
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_14.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_15.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Implementación del Algoritmo
+
+&lt;img src="img_16.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Conclusiones
+Aplicaciones y enfoques alternativos
+
+---
+
+# Conclusiones y Aplicaciones
+
+Uno de los principales desafíos en el reconocimiento de rostros viene dado por las **variaciones dadas en posición (perspectiva), gestualidad e iluminación de las caras**.
+
+
+Dos enfoques alternativos:
+
+- Fisher Faces
+- Tensor SVD
+
+
+---
+
+layout: false
+class: inverse, center, middle
+
+# Dudas
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

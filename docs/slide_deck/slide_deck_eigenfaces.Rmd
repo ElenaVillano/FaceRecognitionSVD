@@ -22,6 +22,7 @@ background-size: 12%
 ---
 
 ```{r logo, echo=F}
+#devtools::install_github("gadenbuie/xaringanExtra")
 library(xaringanExtra)
 
 xaringanExtra::use_logo(
