@@ -1,6 +1,6 @@
 ---
-title: "Eigen Faces"
-subtitle: "aplicando los métodos de PCA, SVD y rotaciones de Jacobi"
+title: "Eigen Faces:"
+subtitle: "Aplicando los métodos de PCA, SVD y rotaciones de Jacobi"
 author:
   - Elena Villalobos Nolasco
   - Nancy Dira Martínez Guzmán
@@ -50,14 +50,14 @@ xaringanExtra::use_logo(
 Dos tendencias principales en los algoritmos para reconocer rostros:
 
 - Algoritmos basados en la apariencia (holísticos)
-- Algoritmos basados en rasgos (features)
+- Algoritmos basados en rasgos (features).
 
 **Los algoritmos de clasificación más utilizados para resolver el problema del reconocimiento de rostro han sido PCA y LDA.**
 
-Eigenfaces y Fisherfaces son ejemplos de estos. También se han utilizado métodos bayesianos, entre otros.
+Eigenfaces y Fisherfaces son ejemplos de estos; también se han utilizado métodos bayesianos, entre otros.
 
 
-```{r, echo = F, eval=T, out.width="85%", fig.align='center'}
+```{r, echo = F, eval=T, out.width="60%", fig.align='center'}
 knitr::include_graphics("img_1.png")
 ```
 
@@ -83,7 +83,7 @@ knitr::include_graphics("img_2.png")
 
 ### El Problema de Optimización
 
-```{r, echo = F, eval=T, out.width="130%", fig.align='center'}
+```{r, echo = F, eval=T, out.width="90%", fig.align='center'}
 knitr::include_graphics("img_3.png")
 ```
 
@@ -93,10 +93,10 @@ knitr::include_graphics("img_3.png")
 
 **Pasos**
 
-1. Estandarización de variables
-2. Selección del número de componentes principales según el porcentaje de varianza explicada
-3. Utilizar el algoritmo de PCA, que podemos consultar en la documentación de sklearn
-4. Interpretar las componentes principales
+1. Estandarización de variables.
+2. Selección del número de componentes principales según el porcentaje de varianza explicada.
+3. Utilizar el algoritmo de PCA, que podemos consultar en la documentación de sklearn.
+4. Interpretar las componentes principales.
 
 
 
@@ -104,7 +104,7 @@ knitr::include_graphics("img_3.png")
 **Elección de las Componentes Principales**
 
 - QCP que acumulen cierto porcentaje de la variación total.
-- CP cuyos eigenvalores sean mayores que el promedio  𝜆¯ .
+- CP cuyos eigenvalores sean mayores que el promedio $\bar{\lambda}$.
 - Utilizar una gráfica de codo (scree plot).
 - Verificar la significancia de las componentes más grandes.
 

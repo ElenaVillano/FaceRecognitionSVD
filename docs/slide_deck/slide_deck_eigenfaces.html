@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Eigen Faces</title>
+    <title>Eigen Faces:</title>
     <meta charset="utf-8" />
     <meta name="author" content="Elena Villalobos Nolasco" />
     <meta name="author" content="Nancy Dira Martínez Guzmán" />
@@ -14,8 +14,8 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Eigen Faces
-## aplicando los métodos de PCA, SVD y rotaciones de Jacobi
+# Eigen Faces:
+## Aplicando los métodos de PCA, SVD y rotaciones de Jacobi
 ### Elena Villalobos Nolasco
 ### Nancy Dira Martínez Guzmán
 ### Laura Marcela Tejada López
@@ -83,14 +83,14 @@ top:1em;right:1em;
 Dos tendencias principales en los algoritmos para reconocer rostros:
 
 - Algoritmos basados en la apariencia (holísticos)
-- Algoritmos basados en rasgos (features)
+- Algoritmos basados en rasgos (features).
 
 **Los algoritmos de clasificación más utilizados para resolver el problema del reconocimiento de rostro han sido PCA y LDA.**
 
-Eigenfaces y Fisherfaces son ejemplos de estos. También se han utilizado métodos bayesianos, entre otros.
+Eigenfaces y Fisherfaces son ejemplos de estos; también se han utilizado métodos bayesianos, entre otros.
 
 
-&lt;img src="img_1.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img_1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -112,7 +112,7 @@ Representa la selección de un nuevo conjunto de coordenadas, que obtenemos medi
 
 ### El Problema de Optimización
 
-&lt;img src="img_3.png" width="130%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img_3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -120,10 +120,10 @@ Representa la selección de un nuevo conjunto de coordenadas, que obtenemos medi
 
 **Pasos**
 
-1. Estandarización de variables
-2. Selección del número de componentes principales según el porcentaje de varianza explicada
-3. Utilizar el algoritmo de PCA, que podemos consultar en la documentación de sklearn
-4. Interpretar las componentes principales
+1. Estandarización de variables.
+2. Selección del número de componentes principales según el porcentaje de varianza explicada.
+3. Utilizar el algoritmo de PCA, que podemos consultar en la documentación de sklearn.
+4. Interpretar las componentes principales.
 
 
 
@@ -131,7 +131,7 @@ Representa la selección de un nuevo conjunto de coordenadas, que obtenemos medi
 **Elección de las Componentes Principales**
 
 - QCP que acumulen cierto porcentaje de la variación total.
-- CP cuyos eigenvalores sean mayores que el promedio  𝜆¯ .
+- CP cuyos eigenvalores sean mayores que el promedio `\(\bar{\lambda}\)`.
 - Utilizar una gráfica de codo (scree plot).
 - Verificar la significancia de las componentes más grandes.
 
